@@ -3,12 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: "Poppins" sans-serif;
 }
 
 body {
     background-color: black;
     color: white;
     font-size: 16px;
+    overflow: hidden;
 }
 
 header {
@@ -45,15 +47,162 @@ section {
     margin: auto;
     position: relative;
 
+    & .item {
+        position: absolute;
+        inset: 0;
+
+      & .car-img {
+        position:absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 70%;
+
+
+        & img {
+            width: 100%;
+            transform: rotate(-15deg);
+        }
+      }
+
+    & .content {
+        position: absolute;
+        right: 100px;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        gap: 20px;
+
+
+        & .car-information {
+            font-weight: bold;
+        }
+
+        & h2 {
+          font-size: 5em;  
+          white-space: nowrap;
+          overflow: hidden;
+         text-overflow: ellipsis;
+         font-family: "League Gothic" sans-serif;
+        }
+
+        & .description {
+            color: #dcdcdc;
+            font-size: 14px;
+            text-align: right;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            max-width: 100%;
+        }
+
+        & .information {
+            border-radius: 30px;
+            height: 35px;
+            width: 120px;
+            text-transform: uppercase;
+            border:  2px solid #791fd3;
+            background-color: #beff1b;
+            color: black;
+            cursor: pointer;
+            font-weight: bold ;
+        }
+
+    }
+
+    }
+
+     &::before {
+        content: '';
+        position: absolute;
+        height: 200px;
+        width: 100%;
+        top: 50%;
+        border-top: 1px solid #dcdcdc;
+     }
+
    }
 
-}
+   .arrows {
 
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
 
-.arrows {
+      
+   & button:nth-child(1){
+     & img {
+        transform: scale(-1);
+     }
+   }
+
     & button {
+        top: 60%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
         & img {
-            width: 100px;
+            width: 30px;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        &:hover {
+            background-color: #beff1b;
         }
     }
 }
+
+ .indicators {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) ;
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+
+
+   & .number {
+    font-size: 5em;
+    font-family: "League Gothic", sans-serif;
+   }
+
+
+   & ul {
+    display: flex;
+    gap: 10px;
+
+   & li {
+    width: 50px;
+    height: 5px;
+    background-color: #beff1b;
+    border-radius: 5px;
+    transition: 0.5s;
+   }
+
+   & .active {
+    background-color: #fff;
+   }
+
+   }
+
+ }
+
+
+
+}
+
+
+
